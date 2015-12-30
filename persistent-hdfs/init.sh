@@ -9,7 +9,7 @@ fi
 
 case "$HADOOP_MAJOR_VERSION" in
   1)
-    wget http://s3.amazonaws.com/spark-related-packages/hadoop-1.0.4.tar.gz
+    wget ${DOWNLOAD_URL}hadoop-1.0.4.tar.gz
     echo "Unpacking Hadoop"
     tar xvzf hadoop-1.0.4.tar.gz > /tmp/spark-ec2_hadoop.log
     rm hadoop-*.tar.gz
@@ -17,7 +17,7 @@ case "$HADOOP_MAJOR_VERSION" in
     cp /root/hadoop-native/* /root/persistent-hdfs/lib/native/
     ;;
   2)
-    wget http://s3.amazonaws.com/spark-related-packages/hadoop-2.0.0-cdh4.2.0.tar.gz
+    wget ${DOWNLOAD_URL}hadoop-2.0.0-cdh4.2.0.tar.gz
     echo "Unpacking Hadoop"
     tar xvzf hadoop-*.tar.gz > /tmp/spark-ec2_hadoop.log
     rm hadoop-*.tar.gz
@@ -29,7 +29,7 @@ case "$HADOOP_MAJOR_VERSION" in
     cp /root/hadoop-native/* /root/persistent-hdfs/lib/native/
     ;;
   yarn)
-    wget http://s3.amazonaws.com/spark-related-packages/hadoop-2.4.0.tar.gz
+    wget ${DOWNLOAD_URL}hadoop-2.4.0.tar.gz
     echo "Unpacking Hadoop"
     tar xvzf hadoop-*.tar.gz > /tmp/spark-ec2_hadoop.log
     rm hadoop-*.tar.gz

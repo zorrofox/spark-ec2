@@ -23,6 +23,14 @@ source ec2-variables.sh
 # even if the instance is restarted with a different private DNS name
 PRIVATE_DNS=`wget -q -O - http://169.254.169.254/latest/meta-data/local-hostname`
 PUBLIC_DNS=`wget -q -O - http://169.254.169.254/latest/meta-data/hostname`
+DOMAIN=`wget -q -O - http://169.254.169.254/latest/meta-data/services/domain`
+
+if [[ "$DOMAIN" == "amazonaws.com.cn" ]] ; then
+  DOWNLOAD_URL="http://s3.cn-north-1.amazonaws.com.cn/spark-packages/"
+else
+  DOWNLOAD_URL="http://s3.amazonaws.com/spark-related-packages/"
+fi
+
 hostname $PRIVATE_DNS
 echo $PRIVATE_DNS > /etc/hostname
 export HOSTNAME=$PRIVATE_DNS  # Fix the bash built-in hostname variable too
