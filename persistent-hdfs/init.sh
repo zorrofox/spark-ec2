@@ -29,11 +29,11 @@ case "$HADOOP_MAJOR_VERSION" in
     cp /root/hadoop-native/* /root/persistent-hdfs/lib/native/
     ;;
   yarn)
-    wget ${DOWNLOAD_URL}hadoop-2.6.3.tar.gz
+    wget ${DOWNLOAD_URL}hadoop-2.7.1.tar.gz
     echo "Unpacking Hadoop"
     tar xvzf hadoop-*.tar.gz > /tmp/spark-ec2_hadoop.log
     rm hadoop-*.tar.gz
-    mv hadoop-2.6.3/ persistent-hdfs/
+    mv hadoop-2.7.1/ persistent-hdfs/
 
     # Have single conf dir
     rm -rf /root/persistent-hdfs/etc/hadoop/

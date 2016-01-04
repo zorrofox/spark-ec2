@@ -53,7 +53,7 @@ else
       elif [[ "$HADOOP_MAJOR_VERSION" == "2" ]]; then
         wget ${DOWNLOAD_URL}Tachyon/tachyon-$TACHYON_VERSION-cdh4-bin.tar.gz
       else
-        wget ${DOWNLOAD_URL}Tachyon/tachyon-$TACHYON_VERSION-hadoop2.6-bin.tar.gz
+        wget ${DOWNLOAD_URL}Tachyon/tachyon-$TACHYON_VERSION-hadoop2.7.1-bin.tar.gz
       fi
       if [ $? != 0 ]; then
         echo "ERROR: Unknown Tachyon version"
